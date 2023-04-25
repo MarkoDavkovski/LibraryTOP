@@ -81,12 +81,16 @@ window.addEventListener('click', (e) => {
 });
 
 formAddBtn.addEventListener('click', (e) => {
-	e.preventDefault();
-
 	const title = document.querySelector('#book-title').value;
 	const author = document.querySelector('#book-author').value;
 	const pages = document.querySelector('#book-pages').value;
 	const read = document.querySelector('#book-read').checked;
+
+	if (title === '' || author === '' || pages === '') {
+		e.preventDefault();
+		alert('All inputs are required');
+		return;
+	}
 
 	modal.style.display = 'none';
 

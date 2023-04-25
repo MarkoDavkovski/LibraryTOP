@@ -76,7 +76,7 @@ h1.book-title {
 }
 
 .modal {
-	display: none;
+	display: block;
 	position: fixed;
 	z-index: 1;
 	padding-top: 30vh;
@@ -158,7 +158,16 @@ h1.book-title {
 	-ms-user-select: none;
 	user-select: none;
 }
-
+/* input:invalid {
+	border: 1px solid red;
+} */
+input:invalid:focus {
+	outline: 1px solid red;
+}
+input:valid:focus,
+input:valid {
+	outline: 1px solid green;
+}
 .checkmark {
 	position: absolute;
 	top: -2px;
